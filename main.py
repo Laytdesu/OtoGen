@@ -6,7 +6,7 @@ import json
 from logging import exception
 
 # this varible enables verbose output which gives detailed output of what the script does, it's here mostly for debugging
-verboseMode = True
+verboseMode = False
 
 workingFolder = input("Path to your labels: ")
 directoryList = os.listdir(workingFolder)
