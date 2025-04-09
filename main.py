@@ -6,10 +6,11 @@ import json
 from logging import exception
 
 # this varible enables verbose output which gives detailed output of what the script does, it's here mostly for debugging
-verboseMode = False
+verboseMode = True
 
-workingFolder = sys.argv[1]
+workingFolder = input("Path to your labels: ")
 directoryList = os.listdir(workingFolder)
+directoryList.remove("config.ini")
 folderLoopIndex = 0
 
 rawSymbols = []
@@ -30,7 +31,7 @@ generateV_CNonPlosive = False
 generateV_CPlosive = False
 
 config = configparser.ConfigParser()
-config.read("config.ini")
+config.read(os.path.join(workingFolder, "config.ini"))
 consonantList = json.loads(config.get("Symbols", "Consonants"))
 vowelList = json.loads(config.get("Symbols", "Vowels"))
 
@@ -40,8 +41,8 @@ if config.get("Generate", "Generate_CV_NonPlosive") == "1":
     generateCVNonPlosive = True
 if config.get("Generate", "Generate_V_C_NonPlosive") == "1":
     generateV_CNonPlosive = True
-if config.get("Generate", "Generate_CV_Plosive") == "1":
-    Generate_V_C_Plosive = True
+if config.get("Generate", "Generate_V_C_Plosive") == "1":
+    generateV_CPlosive = True
 
 index = 0
 
@@ -232,3 +233,4 @@ while folderLoopIndex < len(directoryList):
     folderLoopIndex = folderLoopIndex + 1
 
 print("Oto has been generated!")
+input("Press enter to exit")
