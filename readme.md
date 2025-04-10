@@ -2,7 +2,7 @@
 OtoGen is a simple python script/utility that aims to make otoing process easier by converting user made audcity labels into oto
 
 ## What can this script do?
-Right now it can oto a very simple CVVC voicebank, so far the script only handles Medial [CV] and [V C] transitions but i hope to implement other types of phonemes for english(and other languages)soon
+Right now it can oto a very simple CVVC voicebank, so far the script only handles Medial [CV] and [V C] transitions but I hope to implement other types of phonemes for english and other languages soon(specifically right now I'm gonna try and target VCCV since it's a popular format used for quite a few languages)
 
 ## Usage
 1. From releases download latest "OtoGen-Win.zip" and extract it
